@@ -1,0 +1,23 @@
+{
+    "posts": {"es": "Publicaciones", "en": "Posts", "jp": "投稿"},
+    "dashboard": {"es": "Panel de Control", "en": "Dashboard", "jp": "ダッシュボード"},
+    "upload": {"es": "Subir", "en": "Upload", "jp": "アップロード"},
+    "settings": {"es": "Configuración", "en": "Settings", "jp": "設定"},
+    "comments": {"es": "Comentarios", "en": "Comments", "jp": "コメント"},
+    "users": {"es": "Usuarios", "en": "Users", "jp": "ユーザー"},
+    "ads": {"es": "Anuncios", "en": "Ads", "jp": "広告"},
+    "scripts": {"es": "Scripts", "en": "Scripts", "jp": "スクリプト"},
+    "template": {"es": "Plantilla", "en": "Template", "jp": "テンプレート"},
+    "templates": {"es": "Plantillas", "en": "Templates", "jp": "テンプレート"},
+    "explorer": {"es": "Explorador", "en": "Explorer", "jp": "エクスプローラー"},
+    "editor": {"es": "Editor", "en": "Editor", "jp": "エディター"},
+    "information": {"es": "Información", "en": "Information", "jp": "情報"},
+    "entry": {"es": "Entrada", "en": "Entry", "jp": "エントリー"},
+    "entries": {"es": "Entradas", "en": "Entries", "jp": "エントリー"},
+    "page": {"es": "Página", "en": "Page", "jp": "ページ"},
+    "pages": {"es": "Páginas", "en": "Pages", "jp": "ページ"},
+    "profile": {"es": "Perfil", "en": "Profile", "jp": "プロフィール"},
+    "logout": {"es": "Cerrar Sesión", "en": "Logout", "jp": "ログアウト"},
+    "login": {"es": "Iniciar Sesión", "en": "Login", "jp": "ログイン"},
+    "register": {"es": "Registrarse", "en": "Register", "jp": "登録"}
+}

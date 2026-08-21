@@ -1,0 +1,53 @@
+{
+  "app_name": "Tiny",
+  "app_link": "http://localhost/tiny",
+  "app_year": "2026",
+  "app_lang": "es",
+  "app_timezone": "America/Bogota",
+  "app_debug": true,
+  "app_description": "Tiny es una pagina web para publicar y compartir contenido de manera sencilla y rapida.",
+  "app_keywords": "framework, php, web, desarrollo, aplicaciones",
+  "app_theme": "default",
+  "app_style": "style.css",
+  "app_ssl": false,
+  "captcha": {
+    "public": "",
+    "private": ""
+  },
+  "scripts": {
+    "google": {
+      "enable": false,
+      "script": ""
+    },
+    "important": {
+      "enable": true,
+      "script": "<!-- Captcha -->\r\n<script src=\"https:\/\/js.hcaptcha.com\/1\/api.js\" async defer><\/script>"
+    },
+    "other": {
+      "enable": true,
+      "script": "<meta property=\"og:locale\" content=\"es_CO\" \/>\r\n<meta name=\"facebook:site\" content=\"@tobix64\" \/>\r\n<meta name=\"twitter:site\" content=\"@armindeck\" \/>\r\n<meta name=\"youtube:site\" content=\"@tobix64\" \/>\r\n<meta name=\"github:site\" content=\"@armindeck\" \/>"
+    }
+  },
+  "ads": {
+    "moving": {
+      "enable": true,
+      "content": "🎁 Se encuentra disponible la versión 0.1.0-dev de tiny y viene con nuevas mejoras! ✅",
+      "url": "https:\/\/dbproject.rf.gd",
+      "new_tab": true
+    },
+    "banner": {
+      "enable": true,
+      "image": "https:\/\/dbproject.rf.gd\/assets\/img\/anuncio.png",
+      "url": "https:\/\/dbproject.rf.gd",
+      "new_tab": true
+    }
+  },
+  "error_link": {
+    "400": "http:\/\/localhost\/tiny\/error?type=400",
+    "401": "http:\/\/localhost\/tiny\/error?type=401",
+    "403": "http:\/\/localhost\/tiny\/error?type=403",
+    "404": "http:\/\/localhost\/tiny\/error?type=404",
+    "500": "http:\/\/localhost\/tiny\/error?type=500",
+    "503": "http:\/\/localhost\/tiny\/error?type=503"
+  }
+}

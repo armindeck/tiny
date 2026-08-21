@@ -1,0 +1,42 @@
+{
+  "core_name": "tiny",
+  "core_link": "https://github.com/armindeck/tiny",
+  "core_version": "1.0.0",
+  "core_state": "dev",
+  "core_created": "2026-08-15",
+  "core_updated": "2026-08-20",
+  "core_creator_name": "Armin Deck",
+  "core_creator_link": "https://github.com/armindeck",
+  "core_languages": ["es", "en"],
+  "core_themes": [
+    "light",
+    "dark",
+    "dark-aero",
+    "pink",
+    "fuchsia",
+    "cyberpunk",
+    "matrix"
+  ],
+  "core_social": {
+    "personal": {
+      "social_name": "Personal",
+      "name": "dbproject",
+      "link": "https://dbproject.rf.gd"
+    },
+    "github": {
+      "social_name": "GitHub",
+      "name": "Armin Deck",
+      "link": "https://github.com/armindeck"
+    },
+    "facebook": {
+      "social_name": "Facebook",
+      "name": "Tobix64",
+      "link": "https://facebook.com/tobix64"
+    },
+    "youtube": {
+      "social_name": "YouTube",
+      "name": "Tobix64",
+      "link": "https://youtube.com/@tobix64"
+    }
+  }
+}
