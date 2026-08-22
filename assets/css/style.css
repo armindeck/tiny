@@ -195,3 +195,19 @@ body {
 .gap-8 {
   gap: 8px;
 }
+
+.p-4 {
+  padding: 4px;
+}
+
+.p-8 {
+  padding: 8px;
+}
+
+.b-bottom-1 {
+  border-bottom: 1px solid var(--border-co);
+}
+
+.t-small {
+  font-size: small;
+}
