@@ -59,7 +59,7 @@ class Init {
     public static function run(): void {
         self::generateFiles();
         Debug::setDefault();
-        echo Debug::run(true);
+        echo Debug::run(Config::get()["app_debug"] ?? false);
         require_once RAIZ."/app/router/web.php";
     }
 }
