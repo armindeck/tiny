@@ -45,18 +45,29 @@ $menu = view("dashboard.components.menu", [
     "section_exists" => $section_exists ?? false
 ], return: true);
 
-$section_view = <<<HTML
-HTML;
+if(empty($section)){
+    $section_view = ""; // Dev
+} elseif(empty($section_exists) || !file_exists(__DIR__."/sections/".($section ?? "")."-view.php")) {
+    $section_view = view("dashboard.components.section-not-found", [
+        "section" => $section ?? "",
+        "sections" => $sections ?? [],
+    ], return: true);
+} else {
+    $section_view = view("dashboard.sections.".($section ?? ""), [
+        "section" => $section ?? "",
+        "sections" => $sections ?? [],
+    ], return: true);
+}
 
 $extruct = <<<HTML
-    <div class="flex flex-row gap-8">
+    <div class="flex flex-column gap-8">
         $menu
         $section_view
     </div>
 HTML;
 
 view("layout", [
-    "layout" => $menu,
+    "layout" => $extruct,
     "app_style" => $app_style ?? "",
     "title" => $title ?? "",
     "app_lang" => $app_lang ?? "en",
