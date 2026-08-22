@@ -56,6 +56,8 @@ require_once RAIZ."/app/model/Dashboard.php";
 require_once RAIZ."/app/Controller/DashboardController.php";
 require_once RAIZ."/app/model/ViewComponent.php";
 require_once RAIZ."/app/model/Translate.php";
+require_once RAIZ."/app/lib/Markdown.php";
+require_once RAIZ."/app/lib/MarkdownExtra.php";
 
 require_once RAIZ."/app/init.php";
 app\Init::run();
