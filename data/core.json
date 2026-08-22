@@ -1,10 +1,11 @@
 {
   "core_name": "tiny",
   "core_link": "https://github.com/armindeck/tiny",
+  "core_about": "Tiny es una pagina web para publicar y compartir contenido de manera sencilla y rapida.",
   "core_version": "1.0.0",
   "core_state": "dev",
   "core_created": "2026-08-15",
-  "core_updated": "2026-08-20",
+  "core_updated": "2026-08-21",
   "core_creator_name": "Armin Deck",
   "core_creator_link": "https://github.com/armindeck",
   "core_languages": ["es", "en"],
