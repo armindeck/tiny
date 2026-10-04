@@ -1,63 +1,44 @@
-<?php
-
-/*  Licencia de Uso No Transferible                                       */
-/**************************************************************************/
-/*                        This file is part of:                           */
-/*                              Tiny                                      */
-/*                 https://github.com/armindeck/tiny                      */
-/**************************************************************************/
-/* Copyright (c) 2026 Armin Deck                                          */
-/*                                                                        */
-/* Se concede permiso, de forma gratuita, a cualquier persona para usar,  */
-/* modificar y ejecutar el código fuente de este software, incluyendo su  */
-/* uso en proyectos comerciales (como monetización por publicidad o       */
-/* donaciones).                                                           */
-/*                                                                        */
-/* Restricciones estrictas:                                               */
-/* - No está permitido vender, sublicenciar o distribuir el código        */
-/*   fuente —total o parcialmente— con fines de lucro.                    */
-/* - No está permitido convertir el código en privativo ni eliminar       */
-/*   esta licencia.                                                       */
-/* - No está permitido reclamar la autoría del código original.           */
-/*                                                                        */
-/* Uso permitido:                                                         */
-/* - Se permite modificar y usar el código con fines personales,          */
-/*   educativos y/o comerciales, siempre que no se venda.                 */
-/* - Se permite usar este software como base para otros proyectos,        */
-/*   siempre que esta licencia se mantenga.                               */
-/*                                                                        */
-/* El autor Armin Deck se reserva el derecho de modificar esta            */
-/* licencia en futuras versiones del software.                            */
-/*                                                                        */
-/* EL SOFTWARE SE ENTREGA "TAL CUAL", SIN GARANTÍAS DE NINGÚN TIPO,       */
-/* EXPRESAS O IMPLÍCITAS, INCLUYENDO, SIN LIMITACIÓN, GARANTÍAS DE        */
-/* COMERCIABILIDAD, IDONEIDAD PARA UN PROPÓSITO PARTICULAR Y NO           */
-/* INFRACCIÓN. EN NINGÚN CASO LOS AUTORES SERÁN RESPONSABLES POR          */
-/* RECLAMACIONES, DAÑOS U OTRAS RESPONSABILIDADES, YA SEA EN UNA ACCIÓN   */
-/* CONTRACTUAL, EXTRACONTRACTUAL O DE OTRO TIPO, DERIVADAS DE O EN        */
-/* CONEXIÓN CON EL SOFTWARE, SU USO O OTRO TIPO DE MANEJO.                */
-/**************************************************************************/
+<?php // Provided by Armindeck: https://github.com/armindeck/tiny
 
 session_start([
-    "cookie_secure" => true, // Solo HTTPS
-    "cookie_httponly" => true, // No accesible desde JS
-    "cookie_samesite" => "lax", // Protección CSRF
-    "use_strict_mode" => true // Evita session fixation
+  "cookie_secure" => true, // Solo HTTPS
+  "cookie_httponly" => true, // No accesible desde JS
+  "cookie_samesite" => "lax", // Protección CSRF
+  "use_strict_mode" => true // Evita session fixation
 ]);
 
-define("RAIZ", __DIR__);
+require_once __DIR__.'/inc/function.php';
+require_once __DIR__.'/inc/lib/Markdown.php';
+require_once __DIR__.'/inc/lib/MarkdownExtra.php';
 
-require_once RAIZ."/app/function.php";
-require_once RAIZ."/app/model/Debug.php";
-require_once RAIZ."/app/model/Model.php";
-require_once RAIZ."/app/model/Config.php";
-require_once RAIZ."/app/model/Core.php";
-require_once RAIZ."/app/model/Dashboard.php";
-require_once RAIZ."/app/Controller/DashboardController.php";
-require_once RAIZ."/app/model/ViewComponent.php";
-require_once RAIZ."/app/model/Translate.php";
-require_once RAIZ."/app/lib/Markdown.php";
-require_once RAIZ."/app/lib/MarkdownExtra.php";
+$slug = secureString($_GET['slug'] ?? 'home');
+$core = readJson("core");
+$config = readJson("config");
 
-require_once RAIZ."/app/init.php";
-app\Init::run();
+date_default_timezone_set($config["page_timezone"] ?? "America/Bogota");
+error_reporting($config["page_debug"] ?? false);
+
+$lang_data = readJson("lang");
+$posts = readJson("posts");
+$users = readJson("users");
+
+$style = file_get_contents(dirIni("/assets/css/tiny.css")) ?? '';
+$theme = secureString($_GET['theme'] ?? 'light');
+$theme_alternative = $theme === "light" ? "dark" : "light";
+$theme_icon = $theme === "light" ? "🌑" : "🌕";
+
+$data = array_merge($core, $config, $lang_data, [
+  "post" => $posts[0],
+  "slug" => $slug,
+  "style" => $style,
+  "theme" => $theme,
+  "lang" => secureString($_GET['lang'] ?? $config['page_lang'] ?? 'en'),
+  "theme_alternative" => $theme_alternative,
+  "theme_icon" => $theme_icon,
+  "base_url" => './',
+  "lang_data" => $lang_data,
+  "is_auth" => true, //auth()
+  "is_admin" => true, //isAdmin()
+]);
+
+require_once __DIR__.'/inc/web.php';

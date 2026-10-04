@@ -1,8 +1,20 @@
-## [2026-08-15 ~ 2026-08-21] - v1.0.0-dev
+# Changelog
+Descubre las nuevas novedades de Tiny!
 
-### Dashboard
+## [0.1.0 Dev] - 03/10/2026
 
-- Agregue la libreria de Markdown Lib by `Michel Fortin`
-- Agregue la sección de [información](./dashboard?sc=information) (About, Core, Social networks, License, Changelog)
-- Agregue las secciones al menu (Posts (Entry, Page, Entries, Pages), Upload, Comments, Users, Ads, Scripts, Settings, Template, Explorer, Information)
-- Agregue la url del [/dashboard](./dashboard)
+### 🎨 Nuevo proyecto Tiny
+
+- Interfaz sencilla
+- Funciones sencillas
+- Router sencillo
+- Compatible con Markdown (michelf\Markdown)
+- Paginas disponibles:
+    - Home (dev)
+- Idiomas disponibles:
+    - Español
+    - Ingles
+    - Japones
+- Temas disponibles:
+    - Light
+    - Dark
