@@ -26,8 +26,8 @@
   --main-a-co: var(--container-co);
   --main-a-hover-co: red;
 
-  --container--main-co: var(--container-co);
-  --container--main-bg: var(--container-bg);
+  --container-blog-co: var(--container-co);
+  --container-blog-bg: var(--container-bg);
 
   --footer-co: var(--body-co);
   --footer-bg: #e2e2e2;
@@ -61,8 +61,8 @@
   --main-a-co: var(--container-co);
   --main-a-hover-co: violet;
 
-  --container--main-co: var(--container-co);
-  --container--main-bg: var(--container-bg);
+  --container-blog-co: var(--container-co);
+  --container-blog-bg: var(--container-bg);
 
   --footer-co: var(--body-co);
   --footer-bg: #444;
@@ -226,49 +226,49 @@ body {
   padding: 16px;
 }
 
-.container--main {
+.container-blog {
   padding: 12px;
   border-radius: 8px;
-  color: var(--container--main-co);
-  background-color: var(--container--main-bg);
+  color: var(--container-blog-co);
+  background-color: var(--container-blog-bg);
   max-width: 1000px;
 }
 
-.container--main h1 {
+.container-blog h1 {
+  margin: 22px 0px 16px 0px;
+}
+
+.container-blog h2 {
   margin: 22px 0;
 }
 
-.container--main h2 {
-  margin: 22px 0;
-}
-
-.container--main p {
+.container-blog p {
   line-height: 22px;
   margin: 6px 0;
 }
 
-.container--main ul,
-.container--main ol {
+.container-blog ul,
+.container-blog ol {
   margin-left: 30px;
   line-height: 26px;
 }
 
-.container--main a {
+.container-blog a {
   cursor: pointer;
   text-decoration: underline;
   color: var(--main-a-co);
 }
 
-.container--main a:hover {
+.container-blog a:hover {
   text-decoration: underline;
   color: var(--main-a-hover-co);
 }
 
-.container--main .thumbnail img {
+.container-blog--thumbnail img {
   border-radius: 8px;
 }
 
-.container--main img {
+.container-blog img {
   max-width: 100%;
 }
 
