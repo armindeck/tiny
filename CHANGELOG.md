@@ -1,7 +1,7 @@
 # Changelog
 Descubre las nuevas novedades de Tiny!
 
-## [0.1.0 Dev] - 03/10/2026
+## [0.2.0 Dev] - 04/10/2026
 
 ### 🎨 Nuevo proyecto Tiny
 
@@ -18,3 +18,6 @@ Descubre las nuevas novedades de Tiny!
 - Temas disponibles:
     - Light
     - Dark
+- Fuente por defecto: JetBrains Mono
+- Mejoras visuales en la interfaz
+- Agregue etiquetas SEO
