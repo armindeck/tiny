@@ -34,7 +34,7 @@ $theme_alternative = $theme === "light" ? "dark" : "light";
 $theme_icon = $theme === "light" ? "🌑" : "🌕";
 
 $data = array_merge($core, $config, $lang_data, [
-  "post" => $posts[0],
+  "post" => in_array($slug, ["home", "", "index"]) ? $posts[0] : [],
   "slug" => $slug,
   "base_url" =>  $base_url,
   "style" => $style,
