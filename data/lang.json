@@ -22,5 +22,8 @@
   "admin": {"es": "Admin", "en": "Admin", "ja": "管理"},
   "dashboard": {"es": "Panel", "en": "Dashboard", "ja": "ダッシュボード"},
   "settings": {"es": "Configuración", "en": "Settings", "ja": "設定"},
-  "links": {"es": "Enlaces", "en": "Links", "ja": "リンク"}
+  "links": {"es": "Enlaces", "en": "Links", "ja": "リンク"},
+  "announcements": {"es": "Anuncios", "en": "Announcements", "ja": "お知らせ"},
+  "follow_us": {"es": "Siguenos", "en": "Follow us", "ja": "私たちに従ってください"},
+  "published_on": {"es": "Publicado el", "en": "Published on", "ja": "公開日"}
 }
