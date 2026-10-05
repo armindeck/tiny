@@ -1,10 +1,49 @@
 /* Provided by Armindeck: https://github.com/armindeck/tiny */
 
+@font-face {
+  font-family: jetbrains mono;
+  src: url("{{ base_url }}assets/fonts/JetBrainsMono-Regular.woff2")
+    format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: jetbrains mono;
+  src: url("{{ base_url }}assets/fonts/JetBrainsMono-Bold.woff2")
+    format("woff2");
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+@font-face {
+  font-family: jetbrains mono;
+  src: url("{{ base_url }}assets/fonts/JetBrainsMono-Italic.woff2")
+    format("woff2");
+  font-style: italic;
+  font-weight: 400;
+  font-display: optional;
+}
+@font-face {
+  font-family: jetbrains mono;
+  src: url("{{ base_url }}assets/fonts/JetBrainsMono-MediumItalic.woff2")
+    format("woff2");
+  font-style: italic;
+  font-weight: small;
+  font-display: optional;
+}
+
+:root {
+  --font-family: "JetBrains Mono", ui-monospace, monospace;
+}
+
 :root,
 [data-theme="light"] {
-  --font-family: Arial, sans-serif;
   --body-co: #111;
   --body-bg: #f5f5f5;
+  --title-co: blueviolet;
+  --subtitle-co: #d355d3;
+  --hr-bg: rgba(0, 0, 0, 0.1);
 
   --container-co: var(--body-co);
   --container-bg: #fff;
@@ -23,6 +62,12 @@
   --container-nav-a-hover-co: #fff;
   --container-nav-a-hover-bg: rgba(0, 0, 0, 0.7);
 
+  --aside-border-co: var(--border-co-primary);
+  --aside-a-co: var(--body-co);
+  --aside-a-bg: transparent;
+  --aside-a-hover-co: #fff;
+  --aside-a-hover-bg: rgba(0, 0, 0, 0.7);
+
   --main-a-co: var(--container-co);
   --main-a-hover-co: red;
 
@@ -37,9 +82,11 @@
 }
 
 [data-theme="dark"] {
-  --font-family: Arial, sans-serif;
   --body-co: #fff;
   --body-bg: #333;
+  --title-co: orange;
+  --subtitle-co: violet;
+  --hr-bg: rgba(255, 255, 255, 0.1);
 
   --container-co: var(--body-co);
   --container-bg: #555;
@@ -57,6 +104,12 @@
   --container-nav-a-bg: transparent;
   --container-nav-a-hover-co: #fff;
   --container-nav-a-hover-bg: rgba(0, 0, 0, 0.2);
+
+  --aside-border-co: var(--border-co-primary);
+  --aside-a-co: var(--body-co);
+  --aside-a-bg: transparent;
+  --aside-a-hover-co: #fff;
+  --aside-a-hover-bg: rgba(0, 0, 0, 0.2);
 
   --main-a-co: var(--container-co);
   --main-a-hover-co: violet;
@@ -137,6 +190,13 @@ body {
   border-radius: 0;
 }
 
+hr {
+  margin: 12px 0;
+  border: 0;
+  height: 1px;
+  background-color: var(--hr-bg);
+}
+
 .a-label-check-container-nav {
   display: inline-block;
   width: 36px;
@@ -156,12 +216,13 @@ body {
   content: "☰";
 }
 
-#check-container-nav:checked + .header .label-check-container-nav::before {
-  content: "x";
-  padding: 4px 8px;
-  border-radius: 50%;
+#check-container-nav:checked + .header .a-label-check-container-nav {
   color: var(--header-a-hover-co);
   background-color: var(--header-a-hover-bg);
+}
+
+#check-container-nav:checked + .header .label-check-container-nav::before {
+  content: "x";
 }
 
 .container {
@@ -231,14 +292,18 @@ body {
   border-radius: 8px;
   color: var(--container-blog-co);
   background-color: var(--container-blog-bg);
+  width: 100%;
   max-width: 1000px;
+  flex: 1;
 }
 
 .container-blog h1 {
+  color: var(--title-co);
   margin: 22px 0px 16px 0px;
 }
 
 .container-blog h2 {
+  color: var(--subtitle-co);
   margin: 22px 0;
 }
 
@@ -272,6 +337,50 @@ body {
   max-width: 100%;
 }
 
+.aside {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 16px;
+  border-left: 1px solid var(--aside-border-co);
+  width: 200px;
+}
+
+.aside-content {
+  position: sticky;
+  top: 70px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  overflow: auto;
+}
+
+.aside ul {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  padding: 0;
+}
+
+.aside img {
+  max-width: 100%;
+  border-radius: 4px;
+}
+
+.aside ul a {
+  display: block;
+  padding: 8px 10px;
+  text-decoration: none;
+  border-radius: 4px;
+  color: var(--aside-a-co);
+  background-color: var(--aside-a-bg);
+}
+
+.aside ul a:hover {
+  color: var(--aside-a-hover-co);
+  background-color: var(--aside-a-hover-bg);
+}
+
 .footer {
   padding: 16px;
   text-align: center;
@@ -298,5 +407,11 @@ body {
     width: 100%;
     border-right: none;
     border-bottom: 1px solid var(--container-nav-border-co);
+  }
+
+  .aside {
+    width: 100%;
+    border-right: none;
+    border-top: 1px solid var(--aside-border-co);
   }
 }
